@@ -4,72 +4,396 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>實成系統整合有限公司 | SOLID VICTORY SYSTEM INTEGRATION</title>
-    <!-- 引入 FontAwesome 圖示 -->
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
+        /* 全域樣式設定 */
         :root {
             --primary-blue: #0A74B9;
             --accent-orange: #FF7F00;
+            --dark-bg: #1A1A1A;
             --light-bg: #F8F9FA;
-            --text-color: #333;
+            --text-color: #333333;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
-        header { background: #fff; padding: 15px; position: fixed; top: 0; width: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo-title { font-size: 20px; font-weight: bold; color: var(--primary-blue); }
-        nav a { text-decoration: none; color: #333; margin-left: 15px; font-weight: 500; }
-        .hero { padding: 120px 20px 60px; text-align: center; background: #fff; }
-        .section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service-card { background: #fff; padding: 20px; border-radius: 8px; border-top: 4px solid var(--primary-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; }
-        .contact-form button { width: 100%; padding: 10px; background-color: var(--accent-orange); color: #fff; border: none; cursor: pointer; }
-        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="nav-container">
-            <div class="logo-area">
-                <div class="logo-title">SVSi 實成系統整合</div>
-                <div class="logo-sub">Solid Victory System Integration</div>
-            </div>
-            <nav><a href="#services">服務</a><a href="#contact">聯絡</a></nav>
-        </div>
-    </header>
-    <section class="hero">
-        <h1>實成系統整合有限公司</h1>
-        <p>工業自動化、系統整合、PLC、人機介面專家</p>
-    </section>
-    <section id="services" class="section">
-        <h2>核心服務</h2>
-        <div class="service-grid">
-            <div class="service-card"><h3>工控系統</h3></div>
-            <div class="service-card"><h3>樓宇監控</h3></div>
-            <div class="service-card"><h3>自動化規劃</h3></div>
-        </div>
-    </section>
-    <section id="contact" class="section contact-grid">
-        <div>
-            <h2>聯絡資訊</h2>
-            <p>電話: <a href="tel:0978208190">0978 208 190</a></p>
-            <p>Email: solidvictorysi@gmail.com</p>
-            <div class="btn-group" style="margin-top:20px; display:flex; gap:10px;">
-                <a href="https://line.me" target="_blank" style="padding:10px; background:#06C755; color:white; text-decoration:none;">LINE諮詢</a>
-            </div>
-        </div>
-        <div>
-            <h2>線上諮詢</h2>
-            <form class="contact-form" action="https://formspree.io/f/mojzqyjd" method="POST">
-                <input type="text" name="name" placeholder="您的姓名" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="您的需求" required></textarea>
-                <button type="submit">送出</button>
-            </form>
-        </div>
-    </section>
-</body>
-</html>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Microsoft JhengHei";
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* 導覽列優化：加入 Logo 位置 */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 50px; /* 固定 Logo 高度 */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-sub {
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* 主視覺區 (Hero) */
+        .hero {
+            background: linear-gradient(135deg, rgba(10,116,185,0.08) 0%, rgba(255,127,0,0.04) 100%), #ffffff;
+            padding: 150px 20px 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .hero .eng-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tax-id {
+            display: inline-block;
+            background-color: #eee;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        /* 核心服務區 */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-orange);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+            border-top-color: var(--accent-orange);
+        }
+
+        .service-icon {
+            background-color: rgba(255,127,0,0.1);
+            color: var(--accent-orange);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        /* 經銷產品區 */
+        .products {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .brand-flex {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .brand-item {
+            background: var(--light-bg);
+            padding: 20px 40px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #444;
+            min-width: 200px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .brand-item span {
+            display: block;
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        /* 聯絡資訊區塊 */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .profile-title {
+            font-size: 13px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .profile-name {
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #222;
+        }
+
+        .profile-eng {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .contact-label {
+            width: 75px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .contact-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 互動按鈕群組 */
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-line {
+            background-color: #06C755;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .btn-line:hover { background-color: #05b04b; }
+
+        /* 線上諮詢表單 */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary-blue);
+        }
+        .contact-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-orange);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover { background-color: #e06f00; }
+
+        /* 地圖區域容器 */
+        .map-container {
+            width: 100%;
+            height: 200px;
+            margin-top: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        /* 頁尾 */
+        footer {
+            background-color: var(--dark-bg);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+        }
+
+        footer p {
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* 手機板響應式調整 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .logo-area {
+                flex-direction: column;
+                gap: 5px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
