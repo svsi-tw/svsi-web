@@ -3,397 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>實成系統整合有限公司 | SOLID VICTORY SYSTEM INTEGRATION</title>
+    <title>實成系統整合有限公司 | SVSi</title>
     <style>
-        /* 全域樣式設定 */
-        :root {
-            --primary-blue: #0A74B9;
-            --accent-orange: #FF7F00;
-            --dark-bg: #1A1A1A;
-            --light-bg: #F8F9FA;
-            --text-color: #333333;
-        }
+        :root { --blue: #0A74B9; --orange: #FF7F00; --bg: #F8F9FA; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft JhengHei", sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: #333; background-color: var(--bg); line-height: 1.6; padding-top: 80px; }
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-box { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; }
+        .logo-title { font-size: 18px; font-weight: bold; color: var(--blue); }
+        nav a { text-decoration: none; color: #333; margin-left: 15px; font-weight: bold; }
+        .hero { background: #fff; padding: 60px 20px; text-align: center; border-bottom: 1px solid #eee; }
+        .hero h1 { font-size: 32px; color: #222; margin-bottom: 10px; }
+        .tax-id { display: inline-block; background: #eee; padding: 3px 10px; border-radius: 4px; font-size: 13px; margin: 15px 0; }
+        .section { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+        .sec-title { text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--blue); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 25px 20px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 4px solid var(--blue); }
+        .brand-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .brand-card { background: #fff; padding: 15px 30px; border-radius: 6px; text-align: center; border: 1px solid #ddd; font-weight: bold; min-width: 160px; }
+        .c-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .btn-line { background: #06C755; color: #fff; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; display: inline-block; margin-top: 15px; }
+        .form input, .form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .form button { width: 100%; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        footer { background: #1A1A1A; color: #888; text-align: center; padding: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Microsoft JhengHei";
-        }
+    <header>
+        <div class="nav-box">
+            <div class="logo-box">
+                <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-title">實成系統整合</span>
+            </div>
+            <nav><a href="#services">服務項目</a><a href="#contact">聯絡我們</a></nav>
+        </div>
+    </header>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <section class="hero">
+        <h1>實成系統整合有限公司</h1>
+        <p style="color:#666; letter-spacing:1px;">SOLID VICTORY SYSTEM INTEGRATION CO., LTD.</p>
+        <span class="tax-id">統一編號：95471655</span>
+        <p style="max-width: 600px; margin: 0 auto; color: #555;">全方位的工業控制與自動化系統整合規劃，以專業技術為企業打造高效、穩定的生產與監控環境。</p>
+    </section>
 
-        body {
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
+    <section id="services" class="section">
+        <h2 class="sec-title">核心專業服務</h2>
+        <div class="grid">
+            <div class="card"><h3>01. 工業控制系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">整合規劃與專業施作</p></div>
+            <div class="card"><h3>02. 樓宇監控系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">智慧大樓中央監控整合</p></div>
+            <div class="card"><h3>03. 工廠監控系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">廠房自動化監控與環境施作</p></div>
+            <div class="card"><h3>04. 自動化諮詢</h3><p style="color:#666; font-size:14px; margin-top:5px;">教育訓練與技術支援顧問</p></div>
+            <div class="card"><h3>05. ERP / POS 客製</h3><p style="color:#666; font-size:14px; margin-top:5px;">企業資訊系統整合規劃</p></div>
+        </div>
+    </section>
 
-        /* 導覽列優化：加入 Logo 位置 */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    <section class="section" style="background:#fff; max-width:100%;">
+        <div style="max-width:1200px; margin:0 auto;">
+            <h2 class="sec-title">經銷原廠產品</h2>
+            <div class="brand-grid">
+                <div class="brand-card">Beijer<span style="display:block; font-size:12px; color:#777;">北爾人機介面</span></div>
+                <div class="brand-card">豐煒 PLC<span style="display:block; font-size:12px; color:#777;">自動化控制系統</span></div>
+            </div>
+        </div>
+    </section>
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
+    <section id="contact" class="section c-grid">
+        <div class="card" style="border-top-color: var(--blue);">
+            <h3 style="margin-bottom:15px;">公司資訊</h3>
+            <p><strong>執行長 / CEO：</strong>原 百成 (Victor Yuan)</p>
+            <p style="margin-top:10px;"><strong>行動電話：</strong><a href="tel:0978208190" style="color:var(--blue); text-decoration:none;">0978 208 190</a></p>
+            <p><strong>電子信箱：</strong>solidvictorysi@gmail.com</p>
+            <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
+            <a href="https://line.me" target="_blank" class="btn-line">LINE 即時諮詢</a>
+            
+            <div style="width:100%; height:180px; margin-top:15px; border-radius:4px; overflow:hidden;">
+                <iframe src="https://google.com" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+            </div>
+        </div>
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        <div class="card" style="border-top-color: var(--orange);">
+            <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
+            <form class="form" action="https://formspree.io" method="POST">
+                <input type="text" name="客戶名稱" placeholder="您的姓名 / 公司名稱" required>
+                <input type="email" name="聯絡信箱" placeholder="您的電子信箱" required>
+                <textarea name="需求內容" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
+                <button type="submit">送出諮詢表單</button>
+            </form>
+        </div>
+    </section>
 
-        .logo-img {
-            height: 50px; /* 固定 Logo 高度 */
-            width: auto;
-            object-fit: contain;
-        }
+    <footer>
+        © 2026 實成系統整合有限公司 版權所有.<br>SOLID VICTORY SYSTEM INTEGRATION CO., LTD.
+    </footer>
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--primary-blue);
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-
-        .logo-sub {
-            font-size: 10px;
-            color: #666;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-blue);
-        }
-
-        /* 主視覺區 (Hero) */
-        .hero {
-            background: linear-gradient(135deg, rgba(10,116,185,0.08) 0%, rgba(255,127,0,0.04) 100%), #ffffff;
-            padding: 150px 20px 80px 20px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            color: #222;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .hero .eng-title {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .tax-id {
-            display: inline-block;
-            background-color: #eee;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #444;
-            margin-bottom: 30px;
-        }
-
-        /* 核心服務區 */
-        .services {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-orange);
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            border-top: 4px solid var(--primary-blue);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.08);
-            border-top-color: var(--accent-orange);
-        }
-
-        .service-icon {
-            background-color: rgba(255,127,0,0.1);
-            color: var(--accent-orange);
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #222;
-        }
-
-        /* 經銷產品區 */
-        .products {
-            background-color: #fff;
-            padding: 60px 20px;
-        }
-
-        .product-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .brand-flex {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .brand-item {
-            background: var(--light-bg);
-            padding: 20px 40px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #444;
-            min-width: 200px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .brand-item span {
-            display: block;
-            font-size: 14px;
-            color: #777;
-            margin-top: 5px;
-            font-weight: normal;
-        }
-
-        /* 聯絡資訊區塊 */
-        .contact-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .profile-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .profile-title {
-            font-size: 13px;
-            color: var(--primary-blue);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .profile-name {
-            font-size: 26px;
-            font-weight: bold;
-            margin-top: 5px;
-            color: #222;
-        }
-
-        .profile-eng {
-            color: #777;
-            margin-bottom: 15px;
-        }
-
-        .contact-info-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-
-        .contact-label {
-            width: 75px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .contact-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-
-        /* 互動按鈕群組 */
-        .btn-group {
-            margin-top: 20px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn-line {
-            background-color: #06C755;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.2s;
-        }
-        .btn-line:hover { background-color: #05b04b; }
-
-        /* 線上諮詢表單 */
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-        }
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary-blue);
-        }
-        .contact-form textarea {
-            height: 100px;
-            resize: vertical;
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--accent-orange);
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .contact-form button:hover { background-color: #e06f00; }
-
-        /* 地圖區域容器 */
-        .map-container {
-            width: 100%;
-            height: 200px;
-            margin-top: 15px;
-            border-radius: 4px;
-            overflow: hidden;
-            border: 1px solid #ddd;
-        }
-
-        /* 頁尾 */
-        footer {
-            background-color: var(--dark-bg);
-            color: #fff;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 13px;
-        }
-
-        footer p {
-            color: #888;
-            margin-top: 5px;
-        }
-
-        /* 手機板響應式調整 */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .logo-area {
-                flex-direction: column;
-                gap: 5px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-            .hero h1 {
+</body>
+</html>
