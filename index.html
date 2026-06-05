@@ -81,9 +81,32 @@
             <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
             <a href="https://line.me" target="_blank" class="btn-line">LINE 即時諮詢</a>
             <div style="width:100%; height:180px; margin-top:15px; border-radius:4px; overflow:hidden;">
-               <div style="width:100%; height:180px; border-radius:6px; overflow:hidden; border:1px solid #cce2f1; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <iframe src="https://google.com" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+               <!-- 引入自由地圖所需的衣服與大腦，放這裡 100% 通行不被封鎖 -->
+<link rel="stylesheet" href="https://unpkg.com" />
+<script src="https://unpkg.com"></script>
+
+<!-- 彩色地圖畫布本體 -->
+<div id="svsi-map" style="width:100%; height:180px; border-radius:6px; border:1px solid #cce2f1; box-shadow:0 2px 8px rgba(0,0,0,0.05); z-index: 1;"></div>
+
+<!-- 驅動地圖自動繪製並定位桃園力行路 717 號的指令 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 定位實成系統桃園力行路精確經緯度坐標
+        var map = L.map('svsi-map').setView([25.00045, 121.29177], 16);
+        
+        // 載入標準彩色地圖圖磚
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 插上一支精準的紅色導航大地標
+        var marker = L.marker([25.00045, 121.29177]).addTo(map);
+        
+        // 點擊地圖標記時自動引導客戶開啟導航
+        marker.bindPopup("<b style='color:#0A74B9;'>實成系統整合有限公司</b><br><span style='font-size:12px;color:#666;'>桃園市桃園區力行路717號14樓</span><br><a href='https://google.com' target='_blank' style='display:inline-block;margin-top:5px;color:#FF7F00;text-decoration:none;font-weight:bold;'>👉 點此開啟導航</a>").openPopup();
+    });
+</script>
+
 </div>
             </div>
         </div>
