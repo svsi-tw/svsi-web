@@ -98,7 +98,7 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap'
         }).addTo(map);
-
+        setTimeout(function(){ map.invalidateSize(); }, 500);
         // 插上一支精準的紅色導航大地標
         var marker = L.marker([25.00045, 121.29177]).addTo(map);
         
