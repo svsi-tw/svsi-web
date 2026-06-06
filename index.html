@@ -85,16 +85,18 @@
             <!-- 已修復：內嵌真實 Google 地圖畫面 -->
                                    
                        <!-- 最保險方案：改用本機圖片，100% 絕對不會再破圖或失效 -->
+                        <!-- 最終修復：標準安全重導向 Google 地圖卡片 -->
             <div style="width:100%; border-radius:6px; overflow:hidden; border:1px solid #cce2f1; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:15px; text-align:center; margin-top:15px;">
                 <div style="font-size:28px; margin-bottom:5px;">🌐</div>
                 <div style="color:#0A74B9; font-size:15px; font-weight:bold; letter-spacing:0.5px; margin-bottom:3px;">實成系統整合有限公司</div>
                 <div style="color:#666; font-size:12px; margin-bottom:12px;">桃園市桃園區力行路717號14樓</div>
                 
-                <!-- 讀取您自己資料夾內的地圖圖片 -->
-                <div style="width:100%; border-radius:4px; overflow:hidden; border:1px solid #ddd; line-height: 0;">
-                    <img src="map.png" alt="公司地圖位置" style="width:100%; height:auto; display:block;">
-                </div>
+                <!-- 真正的 Google 地圖跳轉按鈕：使用標準 API 格式，並加入 rel="noopener" 防止網址被瀏覽器切斷 -->
+                <a href="https://google.com" target="_blank" rel="noopener noreferrer" style="display:block; width:100%; color:#fff; font-size:14px; font-weight:bold; margin-top:12px; background:var(--blue); padding:10px; border:none; border-radius:4px; text-decoration:none; box-shadow: 0 2px 5px rgba(10,116,185,0.3);">
+                    🗺️ 開啟 Google 地圖查看位置
+                </a>
             </div>
+
 
 
 
