@@ -1,3 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta name="google-site-verification" content="7RYzqqB39_y_u6O6iiAKIE1BocysBY4i-xdf-4PRcaQ" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>實成系統整合有限公司 | SVSi</title>
+    <style>
+        :root { --blue: #0A74B9; --orange: #FF7F00; --bg: #F8F9FA; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft JhengHei", sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: #333; background-color: var(--bg); line-height: 1.6; padding-top: 80px; }
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-box { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; }
+        .logo-title { font-size: 18px; font-weight: bold; color: var(--blue); }
+        nav a { text-decoration: none; color: #333; margin-left: 15px; font-weight: bold; }
+        .hero { background: #fff; padding: 60px 20px; text-align: center; border-bottom: 1px solid #eee; }
+        .hero h1 { font-size: 32px; color: #222; margin-bottom: 10px; }
+        .tax-id { display: inline-block; background: #eee; padding: 3px 10px; border-radius: 4px; font-size: 13px; margin: 15px 0; }
+        .section { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+        .sec-title { text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--blue); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 25px 20px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 4px solid var(--blue); }
+        .brand-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .brand-card { background: #fff; padding: 15px 30px; border-radius: 6px; text-align: center; border: 1px solid #ddd; font-weight: bold; min-width: 160px; }
+        .c-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .btn-line { background: #06C755; color: #fff; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; display: inline-block; margin-top: 15px; }
+        .form input, .form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .form button { width: 100%; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        footer { background: #1A1A1A; color: #888; text-align: center; padding: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-box">
+            <div class="logo-box">
+                <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-title">實成系統整合</span>
+            </div>
+            <nav><a href="#services">服務項目</a><a href="#contact">聯絡我們</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>實成系統整合有限公司</h1>
+        <p style="color:#666; letter-spacing:1px;">SOLID VICTORY SYSTEM INTEGRATION CO., LTD.</p>
+        <span class="tax-id">統一編號：95471655</span>
+        <p style="max-width: 600px; margin: 0 auto; color: #555;">全方位的工業控制與自動化系統整合規劃，以專業技術為企業打造高效、穩定的生產與監控環境。</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="sec-title">核心專業服務</h2>
+        <div class="grid">
+            <div class="card"><h3>01. 工業控制系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">整合規劃與專業施作</p></div>
+            <div class="card"><h3>02. 樓宇監控系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">智慧大樓中央監控整合</p></div>
+            <div class="card"><h3>03. 工廠監控系統</h3><p style="color:#666; font-size:14px; margin-top:5px;">廠房自動化監控與環境施作</p></div>
+            <div class="card"><h3>04. 自動化諮詢</h3><p style="color:#666; font-size:14px; margin-top:5px;">教育訓練與技術支援顧問</p></div>
+            <div class="card"><h3>05. ERP / POS 客製</h3><p style="color:#666; font-size:14px; margin-top:5px;">企業資訊系統整合規劃</p></div>
+        </div>
+    </section>
+
+    <section class="section" style="background:#fff; max-width:100%;">
+        <div style="max-width:1200px; margin:0 auto;">
+            <h2 class="sec-title">經銷原廠產品</h2>
+            <div class="brand-grid">
+                <div class="brand-card">Beijer<span style="display:block; font-size:12px; color:#777;">北爾人機介面</span></div>
+                <div class="brand-card">豐煒 PLC<span style="display:block; font-size:12px; color:#777;">自動化控制系統</span></div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section c-grid">
         <div class="card" style="border-top-color: var(--blue);">
             <h3 style="margin-bottom:15px;">公司資訊</h3>
@@ -6,23 +80,21 @@
             <p><strong>電子信箱：</strong>solidvictorysi@gmail.com</p>
             <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
             <a href="https://line.me" target="_blank" class="btn-line">LINE 即時諮詢</a>
-            
-            <!-- 修正後的地圖區塊：刪除錯誤容器，確保點擊範圍與連結100%正確 -->
-            <div style="width:100%; border-radius:6px; overflow:hidden; border:1px solid #cce2f1; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px; text-align:center; margin-top:15px;">
-                <div style="font-size:32px; margin-bottom:5px;">🌐</div>
-                <div style="color:#0A74B9; font-size:16px; font-weight:bold; letter-spacing:0.5px;">實成系統整合有限公司</div>
-                <div style="color:#666; font-size:11px; font-family:monospace; margin-top:2px; background:#f0f7fc; padding:2px 8px; border-radius:10px; display:inline-block;">GPS：25.00045° N, 121.29177° E</div>
-                
-                <!-- 真正的 Google 地圖導航按鈕 -->
-                <a href="https://google.com" target="_blank" style="display:block; width:100%; color:#222; font-size:13px; font-weight:bold; margin-top:15px; background:#fcf8f2; padding:8px; border:1px dashed #FF7F00; border-radius:4px; text-decoration:none; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    📍 點此開啟 Google 地圖導航
-                </a>
+            <div style="width:100%; height:180px; margin-top:15px; border-radius:4px; overflow:hidden;">
+                <div style="width:100%; border-radius:6px; overflow:hidden; border:1px solid #cce2f1; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px; text-align:center;">
+                    <div style="font-size:32px; margin-bottom:5px;">🌐</div>
+                    <div style="color:#0A74B9; font-size:16px; font-weight:bold; letter-spacing:0.5px;">實成系統整合有限公司</div>
+                    <div style="color:#666; font-size:11px; font-family:monospace; margin-top:2px; background:#f0f7fc; padding:2px 8px; border-radius:10px; display:inline-block;">GPS：25.00045° N, 121.29177° E</div>
+                    <a href="https://google.com" target="_blank" style="display:inline-block; width:100%; color:#222; font-size:13px; font-weight:bold; margin-top:15px; background:#fcf8f2; padding:8px; border:1px dashed #FF7F00; border-radius:4px; text-decoration:none; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                        📍 桃園市桃園區力行路717號14樓 (👉點此開啟 Google 地圖導航)
+                    </a>
+                </div>
             </div>
         </div>
 
         <div class="card" style="border-top-color: var(--orange);">
             <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
-            <form class="form" action="https://formsubmit.co" method="POST">
+            <form class="form" action="https://formsubmit.co/solidvictorysi@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="您的姓名 / 公司名稱" required>
                 <input type="email" name="聯絡信箱" placeholder="您的電子信箱" required>
                 <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
@@ -30,3 +102,10 @@
             </form>
         </div>
     </section>
+
+    <footer>
+        © 2026 實成系統整合有限公司 版權所有.<br>SOLID VICTORY SYSTEM INTEGRATION CO., LTD.
+    </footer>
+
+</body>
+</html>
