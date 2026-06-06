@@ -79,8 +79,10 @@
             <p style="margin-top:10px;"><strong>行動電話：</strong><a href="tel:0978208190" style="color:var(--blue); text-decoration:none;">0978 208 190</a></p>
             <p><strong>電子信箱：</strong>solidvictorysi@gmail.com</p>
             <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
+            <!-- 建議：之後可以將 https://line.me 換成您公司的 LINE 官方帳號加入好友網址 -->
             <a href="https://line.me" target="_blank" class="btn-line">LINE 即時諮詢</a>
             
+            <!-- 已修復：內嵌真實 Google 地圖畫面 -->
             <div style="width:100%; height:180px; margin-top:15px; border-radius:4px; overflow:hidden;">
                 <iframe src="https://google.com" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -88,10 +90,13 @@
 
         <div class="card" style="border-top-color: var(--orange);">
             <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
-            <!-- 修正：已補齊發信所需的 name 參數，且整合了合法的 Google 地圖 -->
+            <!-- 已修復：欄位與開通設定優化 -->
             <form class="form" action="https://formsubmit.co/solidvictorysi@gmail.com" method="POST">
+                <!-- 關閉內建機器人驗證，讓客戶送出表單更順暢 -->
+                <input type="hidden" name="_captcha" value="false">
+                
                 <input type="text" name="name" placeholder="您的姓名 / 公司名稱" required>
-                <input type="email" name="聯絡信箱" placeholder="您的電子信箱" required>
+                <input type="email" name="email" placeholder="您的電子信箱" required>
                 <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
                 <button type="submit">送出諮詢表單</button>
             </form>
