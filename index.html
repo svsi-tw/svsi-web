@@ -106,13 +106,16 @@
             </div>
         </div>
 
-        <!-- 諮詢表單（已升級為不跳轉 AJAX 機制） -->
+        <!-- 諮詢表單 -->
         <div class="card" style="border-top-color: var(--orange);">
             <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
             <form class="form" id="contactForm">
+                <!-- 👈 這裡把發送的收信郵件直接寫在最顯眼的地方了 -->
+                <input type="hidden" id="targetEmail" value="solidvictorysi@gmail.com">
+                
                 <input type="text" name="name" placeholder="您的姓名 / 公司名稱" required>
                 <input type="email" name="email" placeholder="您的電子信箱" required>
-                <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
+                <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作 or PLC 控制需求細節..." required></textarea>
                 <button type="submit" id="submitBtn">送出諮詢表單</button>
             </form>
         </div>
@@ -122,38 +125,34 @@
         © 2026 實成系統整合有限公司 版權所有.<br>SOLID VICTORY SYSTEM INTEGRATION CO., LTD.
     </footer>
 
-    <!-- 表單背景發送腳本 -->
+    <!-- 表單不跳轉背景發送腳本 -->
     <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // 攔截預設的跳轉行為
+        e.preventDefault();
         
         const form = this;
         const btn = document.getElementById('submitBtn');
+        const email = document.getElementById('targetEmail').value;
         const formData = new FormData(form);
         
-        // 停用按鈕，避免重複點擊
         btn.disabled = true;
         btn.innerText = '傳送中...';
 
-        // 使用 FormSubmit 的 AJAX 端點
-        fetch('https://formsubmit.co', {
+        fetch('https://formsubmit.co' + email, {
             method: 'POST',
             body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
         })
         .then(response => response.json())
         .then(data => {
             alert('感謝您的諮詢！表單已成功送出。');
-            form.reset(); // 成功後清空輸入欄位
+            form.reset();
         })
         .catch(error => {
-            alert('系統發送失敗，請稍後再試，或直接點選電話與我們聯繫。');
+            alert('系統發送失敗，請稍後再試。');
             console.error(error);
         })
         .finally(() => {
-            // 恢復按鈕狀態
             btn.disabled = false;
             btn.innerText = '送出諮詢表單';
         });
