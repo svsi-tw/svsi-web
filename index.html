@@ -16,19 +16,20 @@
         .logo-img { height: 45px; width: auto; }
         .logo-title { font-size: 18px; font-weight: bold; color: var(--blue); }
         nav a { text-decoration: none; color: #333; margin-left: 15px; font-weight: bold; }
+        nav a:hover { color: var(--blue); }
         .hero { background: #fff; padding: 60px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .hero h1 { font-size: 32px; color: #222; margin-bottom: 10px; }
         .tax-id { display: inline-block; background: #eee; padding: 3px 10px; border-radius: 4px; font-size: 13px; margin: 15px 0; }
         .section { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
         .sec-title { text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--blue); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .card { background: #fff; padding: 25px 20px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 4px solid var(--blue); }
         .brand-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .brand-card { background: #fff; padding: 15px 30px; border-radius: 6px; text-align: center; border: 1px solid #ddd; font-weight: bold; min-width: 160px; }
         .c-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .btn-line { background: #06C755; color: #fff; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; display: inline-block; margin-top: 15px; }
         .form input, .form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
-        .form button { width: 100%; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .form button { width: 100%; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+        .form button:hover { background: #e06f00; }
         footer { background: #1A1A1A; color: #888; text-align: center; padding: 20px; font-size: 13px; }
     </style>
 </head>
@@ -73,43 +74,43 @@
     </section>
 
     <section id="contact" class="section c-grid">
-        <div class="card" style="border-top-color: var(--blue);">
-            <h3 style="margin-bottom:15px;">公司資訊</h3>
-            <p><strong>執行長 / CEO：</strong>原 百成 (Victor Yuan)</p>
-            <p style="margin-top:10px;"><strong>行動電話：</strong><a href="tel:0978208190" style="color:var(--blue); text-decoration:none;">0978 208 190</a></p>
-            <p><strong>電子信箱：</strong>solidvictorysi@gmail.com</p>
-            <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
-            <!-- 建議：之後可以將 https://line.me 換成您公司的 LINE 官方帳號加入好友網址 -->
+        <!-- 公司資訊 -->
+        <div class="card" style="border-top-color: var(--blue); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="margin-bottom:15px;">公司資訊</h3>
+                <p><strong>執行長 / CEO：</strong>原 百成 (Victor Yuan)</p>
+                <p style="margin-top:10px;"><strong>行動電話：</strong><a href="tel:0978208190" style="color:var(--blue); text-decoration:none;">0978 208 190</a></p>
+                <p><strong>電子信箱：</strong>solidvictorysi@gmail.com</p>
+                <p><strong>聯絡地址：</strong>桃園市桃園區力行路717號14樓</p>
+            </div>
             
-            <!-- 乾淨、安全的 LINE 專屬條碼區塊 -->
-            <div style="width:100%; border-top:1px solid #eee; padding-top:20px; text-align:center;">
+            <div style="width:100%; border-top:1px solid #eee; padding-top:20px; text-align:center; margin-top: 15px;">
                 <p style="font-size:14px; font-weight:bold; color:#06C755; margin-bottom:10px;">💬 歡迎掃描行動條碼諮詢</p>
                 <div style="width:140px; height:140px; margin:0 auto; padding:8px; border:1px solid #ddd; border-radius:6px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 讀取您上傳至 GitHub 的條碼圖片 -->
                     <img src="LineAddFriend.png" alt="LINE 行動條碼" style="width:100%; height:100%; object-fit:contain;">
                 </div>
             </div>
         </div>
             
-            <!-- 最保險方案：改用本機圖片，100% 絕對不會再破圖或失效 -->
-            <div style="width:100%; border-radius:6px; overflow:hidden; border:1px solid #cce2f1; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:15px; text-align:center; margin-top:15px;">
+        <!-- 地圖位置 -->
+        <div class="card" style="border-top-color: var(--blue); padding: 25px 20px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="width:100%; text-align:center;">
                 <div style="font-size:28px; margin-bottom:5px;">🌐</div>
                 <div style="color:#0A74B9; font-size:15px; font-weight:bold; letter-spacing:0.5px; margin-bottom:3px;">實成系統整合有限公司</div>
                 <div style="color:#666; font-size:12px; margin-bottom:12px;">桃園市桃園區力行路717號14樓</div>
                 
-                <!-- 讀取您自己資料夾內的地圖圖片 -->
                 <div style="width:100%; border-radius:4px; overflow:hidden; border:1px solid #ddd; line-height: 0;">
                     <img src="map.png" alt="公司地圖位置" style="width:100%; height:auto; display:block;">
                 </div>
             </div>
+        </div>
 
+        <!-- 諮詢表單 -->
         <div class="card" style="border-top-color: var(--orange);">
             <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
-            <!-- 已修復：欄位與開通設定優化 -->
             <form class="form" action="https://formsubmit.co/solidvictorysi@gmail.com" method="POST">
-                <!-- 關閉內建機器人驗證，讓客戶送出表單更順暢 -->
                 <input type="hidden" name="_captcha" value="false">
-                 <input type="hidden" name="_next" value="https://svsi-tw.github.io/svsi-web/">
+                <input type="hidden" name="_next" value="https://svsi-tw.github.io/svsi-web/">
                 <input type="text" name="name" placeholder="您的姓名 / 公司名稱" required>
                 <input type="email" name="email" placeholder="您的電子信箱" required>
                 <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
