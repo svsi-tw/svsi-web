@@ -30,6 +30,7 @@
         .form input, .form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
         .form button { width: 100%; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
         .form button:hover { background: #e06f00; }
+        .form button:disabled { background: #ccc; cursor: not-allowed; }
         footer { background: #1A1A1A; color: #888; text-align: center; padding: 20px; font-size: 13px; }
     </style>
 </head>
@@ -105,16 +106,14 @@
             </div>
         </div>
 
-        <!-- 諮詢表單 -->
+        <!-- 諮詢表單（已升級為不跳轉 AJAX 機制） -->
         <div class="card" style="border-top-color: var(--orange);">
             <h3 style="margin-bottom:15px;">線上即時詢價 / 諮詢</h3>
-            <form class="form" action="https://formsubmit.co/solidvictorysi@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://svsi-tw.github.io/svsi-web/">
+            <form class="form" id="contactForm">
                 <input type="text" name="name" placeholder="您的姓名 / 公司名稱" required>
                 <input type="email" name="email" placeholder="您的電子信箱" required>
                 <textarea name="message" rows="4" placeholder="請在此填寫您需要的系統整合、監控施作或 PLC 控制需求細節..." required></textarea>
-                <button type="submit">送出諮詢表單</button>
+                <button type="submit" id="submitBtn">送出諮詢表單</button>
             </form>
         </div>
     </section>
@@ -122,6 +121,44 @@
     <footer>
         © 2026 實成系統整合有限公司 版權所有.<br>SOLID VICTORY SYSTEM INTEGRATION CO., LTD.
     </footer>
+
+    <!-- 表單背景發送腳本 -->
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // 攔截預設的跳轉行為
+        
+        const form = this;
+        const btn = document.getElementById('submitBtn');
+        const formData = new FormData(form);
+        
+        // 停用按鈕，避免重複點擊
+        btn.disabled = true;
+        btn.innerText = '傳送中...';
+
+        // 使用 FormSubmit 的 AJAX 端點
+        fetch('https://formsubmit.co', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('感謝您的諮詢！表單已成功送出。');
+            form.reset(); // 成功後清空輸入欄位
+        })
+        .catch(error => {
+            alert('系統發送失敗，請稍後再試，或直接點選電話與我們聯繫。');
+            console.error(error);
+        })
+        .finally(() => {
+            // 恢復按鈕狀態
+            btn.disabled = false;
+            btn.innerText = '送出諮詢表單';
+        });
+    });
+    </script>
 
 </body>
 </html>
